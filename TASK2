@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinchana B L | Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            color: #333;
+        }
+        header {
+            background: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            border-bottom: 5px solid #fff;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        nav {
+            background-color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            color: #333;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #f5576c;
+        }
+        .section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #f5576c;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+        .skills, .projects {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .skill, .project {
+            flex: 1 1 calc(45% - 20px);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .skill:hover, .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+        .skill h3, .project h3 {
+            color: #f093fb;
+            font-size: 1.5rem;
+        }
+        footer {
+            background-color: #f093fb;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            border-top: 5px solid #f5576c;
+        }
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sinchana B L</h1>
+        <p>Web Developer | Designer | Programmer</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>Hello! I'm Sinchana B L, a passionate web developer with experience in creating dynamic and responsive websites. I enjoy solving problems and learning new technologies to improve my craft.</p>
+    </section>
+
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="skill">
+                <h3>HTML & CSS</h3>
+                <p>Building responsive and user-friendly websites using HTML and CSS.</p>
+            </div>
+            <div class="skill">
+                <h3>JavaScript</h3>
+                <p>Developing interactive elements and web applications with JavaScript.</p>
+            </div>
+            <div class="skill">
+                <h3>React</h3>
+                <p>Creating dynamic user interfaces using React.js framework.</p>
+            </div>
+            <div class="skill">
+                <h3>Backend Development</h3>
+                <p>Experience with Node.js, Express, and database management.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>Project 1</h3>
+                <p>A brief description of your project. Include technologies used and a link to the live demo or GitHub repository.</p>
+            </div>
+            <div class="project">
+                <h3>Project 2</h3>
+                <p>A brief description of your project. Include technologies used and a link to the live demo or GitHub repository.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out to me via email: <strong>sinchana.bl@example.com</strong></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sinchana B L. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
