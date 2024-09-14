@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .gallery-container {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .gallery-image {
+            width: 30%;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content img {
+            max-width: 150%;
+            max-height: 80vh;
+        }
+
+        .close {
+            position: absolute;
+            top: 100px;
+            right: 25px;
+            color: #fff;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover, .close:focus {
+            color: #bbb;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            user-select: none;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .prev:hover, .next:hover {
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        <div class="gallery">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.IDq8cZVcGfgwgkR1Bt0RywHaEo&pid=Api&P=0&h=180" alt="Image 1" class="gallery-image" onclick="openModal(0)">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.eKE8nrMRCK3bdvd62kWJ_wHaEK&pid=Api&P=0&h=180" alt="Image 2" class="gallery-image" onclick="openModal(1)">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.TgJEW6Ysv9iIuU8M6d4avgHaEo&pid=Api&P=0&h=180" alt="Image 3" class="gallery-image" onclick="openModal(2)">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.6L7shpwxVAIr279rA0B1JQHaE7&pid=Api&P=0&h=180" alt="Image 4" class="gallery-image" onclick="openModal(3)">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.wwxK07x0Umfnh0l-nrjxjgHaDg&pid=Api&P=0&h=180" alt="Image 5" class="gallery-image" onclick="openModal(4)">
+        </div>
+    </div>
+
+    <!-- Modal for displaying larger image -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <span class="prev" onclick="prevImage()">&#10094;</span>
+            <img id="modal-image" src="" alt="">
+            <span class="next" onclick="nextImage()">&#10095;</span>
+        </div>
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.gallery-image');
+
+        function openModal(index) {
+            document.getElementById('imageModal').style.display = "block";
+            currentImageIndex = index;
+            showImage(currentImageIndex);
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = "none";
+        }
+
+        function showImage(index) {
+            const modalImage = document.getElementById('modal-image');
+            modalImage.src = images[index].src;
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex === 0) ? images.length - 1 : currentImageIndex - 1;
+            showImage(currentImageIndex);
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex === images.length - 1) ? 0 : currentImageIndex + 1;
+            showImage(currentImageIndex);
+        }
+    </script>
+</body>
+</html>
